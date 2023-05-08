@@ -17,10 +17,10 @@ namespace UssMang
             VerLine yline = new VerLine(0, 29, 0, '#', 119);
             yline.Drow();
 
-            Point p = new Point (4, 4, '*');
+            Point p = new Point (6, 5, '*');
 
-            Snake snake = new Snake(p, 4, BindingDirection.RIGHT);
-
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
             Console.ReadLine();
         }
     }
