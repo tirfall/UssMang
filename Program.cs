@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace UssMang
             yline.Drow();
 
             Point p = new Point (4, 4, '*');
-            p.Draw();
+
+            Snake snake = new Snake(p, 4, BindingDirection.RIGHT);
 
             Console.ReadLine();
         }
