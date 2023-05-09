@@ -28,11 +28,10 @@ namespace UssMang
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-                    if (key.Key == ConsoleKey.LeftArrow)
-                    {
-                        snake.direction = Direction.LEFT;
-                    }
+                    snake.HandleKey(key.Key);
                 }
+                Thread.Sleep(100);
+                snake.Move();
             }
             
             
