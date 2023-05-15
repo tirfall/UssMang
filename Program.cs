@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snake;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,15 +14,18 @@ namespace UssMang
         {
             Console.SetWindowSize(120, 30);
             //рамка
-            HorizontalLine xline = new HorizontalLine(0,119,0,'#',29);
-            xline.Drow();
-            VerLine yline = new VerLine(0, 29, 0, '#', 119);
-            yline.Drow();
+            //HorizontalLine xline = new HorizontalLine(0,119,0,'#',29);
+            //xline.Draw();
+            //VerLine yline = new VerLine(0, 29, 0, '#', 119);
+            //yline.Draw();
+
+            Walls walls = new Walls(119, 30);
+            walls.Draw();
 
             //Змейка
             Point p = new Point (6, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Drow();
+            snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '+');
             Point food = foodCreator.CreateFood();

@@ -16,15 +16,13 @@ namespace Snake
             wallList = new List<Figure>();
 
             // Отрисовка рамочки
-            HorizontalLine upLine = new HorizontalLine(0, mapWidth - 2, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, mapWidth - 2, mapHeight - 1, '+');
-            VerLine leftLine = new VerLine(0, mapHeight - 1, 0, '+');
-            VerLine rightLine = new VerLine(0, mapHeight - 1, mapWidth - 2, '+');
+            HorizontalLine horlines = new HorizontalLine(0, 119, 0, '#', 29);
+            VerLine verlines = new VerLine(0, 29, 0, '#', 119);
+            horlines.Draw();
+            verlines.Draw();
 
-            wallList.Add(upLine);
-            wallList.Add(downLine);
-            wallList.Add(leftLine);
-            wallList.Add(rightLine);
+            wallList.Add(horlines);
+            wallList.Add(verlines);
         }
 
         internal bool IsHit(Figure figure)
