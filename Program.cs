@@ -47,7 +47,8 @@ namespace UssMang
 
             //Sound mäng = new Sound();
             //ConsoleKeyInfo nupp= new ConsoleKeyInfo();
-            //_= mäng.Heli
+            //_= mäng.Heli("../../../.mp3")
+            //
 
             
         }
