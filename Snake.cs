@@ -54,19 +54,19 @@ namespace UssMang
 
         public void HandleKey (ConsoleKey key)
         {
-            if (key == ConsoleKey.LeftArrow)
+            if (key == ConsoleKey.LeftArrow || key == ConsoleKey.A)
             {
                 direction = Direction.LEFT;
             }
-            else if (key == ConsoleKey.RightArrow)
+            else if (key == ConsoleKey.RightArrow || key == ConsoleKey.D)
             {
                 direction = Direction.RIGHT;
             }
-            else if (key == ConsoleKey.DownArrow)
+            else if (key == ConsoleKey.DownArrow || key == ConsoleKey.S)
             {
                 direction = Direction.DOWN;
             }
-            else if (key == ConsoleKey.UpArrow)
+            else if (key == ConsoleKey.UpArrow || key == ConsoleKey.W)
             {
                 direction = Direction.UP;
             }
@@ -79,6 +79,19 @@ namespace UssMang
             {
                 food.sym = head.sym;
                 pList.Add(food);
+                return true;
+                
+            }
+            else { return false; }
+        }
+        internal bool Eatmin(Point foodmin)//Если змея ест минус, уменьшается на один. Доработать чтобы когда оставался 1 символ, не было ошибки
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(foodmin))
+            {
+                Point tail = pList.First();
+                pList.Remove(tail);
+                tail.Clear();
                 return true;
             }
             else { return false; }

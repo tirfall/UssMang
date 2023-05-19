@@ -26,6 +26,9 @@ namespace UssMang
             FoodCreator foodCreator = new FoodCreator(80, 25, '+');
             Point food = foodCreator.CreateFood();
             food.Draw();
+            FoodCreator foodCreatormin = new FoodCreator(80, 25, '-'); //Возможно ошибка в создании
+            Point foodmin = foodCreatormin.CreateFood();
+            foodmin.Draw();
 
             while (true)
             {
@@ -37,6 +40,12 @@ namespace UssMang
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
+                    
+                }
+                if (snake.Eatmin(foodmin))//Создаёт минусы
+                {
+                    foodmin = foodCreatormin.CreateFood();
+                    foodmin.Draw();
                 }
                 else
                 {
@@ -62,16 +71,17 @@ namespace UssMang
         }
         static void WriteGameOver()
         {
-            int xOffset = 25;
-            int yOffset = 8;
+            int xOffset = 45;
+            int yOffset = 9;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(xOffset, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("GAME OVER", xOffset + 1, yOffset++);
+            WriteText("=============================", xOffset, yOffset++);
+            WriteText("GAME OVER", xOffset + 10, yOffset++);
             yOffset++;
-            WriteText("Sisesta sinu nimi:", xOffset + 2, yOffset++);
+            WriteText("Sisesta sinu nimi:", xOffset + 5, yOffset++);
             WriteText("", xOffset + 1, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
+            
+            WriteText("=============================", xOffset, yOffset++);
         }
 
         static void WriteText(String text, int xOffset, int yOffset)

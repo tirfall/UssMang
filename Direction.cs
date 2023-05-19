@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UssMang
 {
-    enum Direction
+    enum Direction //Сделать чтобы можно было ещё управлять с помощью WSAD
     {
         LEFT,
         RIGHT,
