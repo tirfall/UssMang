@@ -7,19 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UssMang
-{ 
+{
     class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
+            
             Console.SetWindowSize(120, 30);
             //рамка
 
             Walls walls = new Walls(119, 30);
             walls.Draw();
-
+            Scores scores = new Scores();
+            scores.Draw(120, 0);
             //Змейка
-            Point p = new Point (6, 5, '*');
+            Point p = new Point(6, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
@@ -40,7 +42,7 @@ namespace UssMang
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
-                    
+
                 }
                 if (snake.Eatmin(foodmin))//Создаёт минусы
                 {
@@ -79,8 +81,9 @@ namespace UssMang
             WriteText("GAME OVER", xOffset + 10, yOffset++);
             yOffset++;
             WriteText("Sisesta sinu nimi:", xOffset + 5, yOffset++);
-            WriteText("", xOffset + 1, yOffset++);
-            
+            Console.SetCursorPosition(xOffset, yOffset);
+            string Name = Console.ReadLine();
+
             WriteText("=============================", xOffset, yOffset++);
         }
 
