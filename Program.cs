@@ -18,8 +18,8 @@ namespace UssMang
 
             Walls walls = new Walls(119, 30);
             walls.Draw();
-            Scores scores = new Scores();
-            scores.Draw(120, 0);
+            //Scores scores = new Scores();
+            //scores.Draw(120, 0);
             //Змейка
             Point p = new Point(6, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
@@ -82,7 +82,7 @@ namespace UssMang
             yOffset++;
             WriteText("Sisesta sinu nimi:", xOffset + 5, yOffset++);
             Console.SetCursorPosition(xOffset, yOffset);
-            string Name = Console.ReadLine();
+            
 
             WriteText("=============================", xOffset, yOffset++);
         }
