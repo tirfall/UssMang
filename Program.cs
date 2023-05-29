@@ -5,12 +5,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace UssMang
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             
             Console.SetWindowSize(120, 30);
@@ -18,8 +19,6 @@ namespace UssMang
 
             Walls walls = new Walls(119, 30);
             walls.Draw();
-            //Scores scores = new Scores();
-            //scores.Draw(120, 0);
             //Змейка
             Point p = new Point(6, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
@@ -34,6 +33,7 @@ namespace UssMang
 
             while (true)
             {
+                Scores.Statistics(Scores.score, Scores.speed);
                 if (walls.IsHit(snake) || snake.IsHitTail())
                 {
                     break;
