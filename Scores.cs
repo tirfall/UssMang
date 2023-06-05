@@ -34,5 +34,16 @@ namespace UssMang
                 score = value;
             }
         }
+        public int Speed
+        {
+            get
+            {
+                return Speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
     }
 }

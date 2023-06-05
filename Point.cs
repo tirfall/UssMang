@@ -12,9 +12,6 @@ namespace UssMang
         public int x;
         public int y;
         public char sym;
-        private int v1;
-        private int v2;
-        private string v3;
 
         public Point(int _x, int _y, char _sym) 
         {
@@ -22,7 +19,7 @@ namespace UssMang
             y = _y;
             sym = _sym;
         }
-        public Point(int v, Point p)
+        public Point(Point p)
         {
             x = p.x;
             y = p.y;

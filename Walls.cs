@@ -16,6 +16,7 @@ namespace Snake
             wallList = new List<Figure>();
 
             // Отрисовка рамочки
+            
             HorizontalLine horlines = new HorizontalLine(0, 119, 0, '#', 26);
             VerLine verlines = new VerLine(0, 26, 0, '#', 119);
             horlines.Draw();

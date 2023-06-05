@@ -12,6 +12,7 @@ namespace UssMang
         public Direction direction;
         public Snake(Point tail, int length, Direction _direction)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             direction = _direction;
             pList = new List<Point>();
             for (int i = 0; i < length; i++)
@@ -24,6 +25,7 @@ namespace UssMang
 
         internal void Move()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Point tail = pList.First();
             pList.Remove(tail);
             Point head = GetNextPoint();
@@ -35,6 +37,7 @@ namespace UssMang
 
         public Point GetNextPoint()
         {
+
             Point head = pList.Last();
             Point nextPoint = new Point (head);
             nextPoint.Move(1, direction);
