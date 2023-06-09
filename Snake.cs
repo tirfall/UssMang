@@ -99,5 +99,52 @@ namespace UssMang
             }
             else { return false; }
         }
+        internal bool Eatspmin(Point foodspmin)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(foodspmin))
+            {
+                foodspmin.sym = head.sym;
+                return true;
+
+            }
+            else { return false; }
+        }
+        internal bool Eatspmax(Point foodspmax)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(foodspmax))
+            {
+                foodspmax.sym = head.sym;
+                return true;
+
+            }
+            else { return false; }
+        }
+        //internal int Eatrandom(Point foodrandom)
+        //{
+        //    Point head = GetNextPoint();
+        //    if (head.IsHit(foodrandom))
+        //    {
+        //        foodrandom.sym = head.sym;
+
+
+        //        Random rnd = new Random();
+
+        //        int ansrnd = rnd.Next(6);
+        //        switch (ansrnd)
+        //        {
+        //            case 0: Eatspmax(); return 1;
+        //            case 1: return 2;
+        //            case 2: break;
+        //            case 3: break;
+        //            case 4: break;
+        //            case 5: break;
+        //        }
+        //        return 10;
+
+        //    }
+        //    else { return 0; }
+        //}
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UssMang
 {
-    internal class Class1
+    internal class Register
     {
     }
 }

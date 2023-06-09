@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace UssMang
 {
-    public class Classic
+    public class Laiendatud
     {
-        public static void classic() {
+        public static void laiend()
+        {
+            int speed = 100;
             Console.Clear();
             Console.SetWindowSize(120, 30);
             //рамка
             Console.ForegroundColor = ConsoleColor.Cyan;
             Walls walls = new Walls(119, 30);
             walls.Draw();
-
-            //Очки
-
 
             //Змейка
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -34,6 +33,15 @@ namespace UssMang
             FoodCreator foodCreatormin = new FoodCreator(80, 25, '-');
             Point foodmin = foodCreatormin.CreateFood();
             foodmin.Draw();
+            FoodCreator foodCreatorspmin = new FoodCreator(80, 25, '<');
+            Point foodspmin = foodCreatorspmin.CreateFood();
+            foodspmin.Draw();
+            FoodCreator foodCreatorspmax = new FoodCreator(80, 25, '>');
+            Point foodspmax = foodCreatorspmax.CreateFood();
+            foodspmax.Draw();
+            //FoodCreator foodCreatorrandom = new FoodCreator(80, 25, '¤');
+            //Point foodrandom = foodCreatorrandom.CreateFood();
+            //foodrandom.Draw();
 
             while (true)
             {
@@ -53,12 +61,30 @@ namespace UssMang
                     foodmin = foodCreatormin.CreateFood();
                     foodmin.Draw();
                 }
+                if (snake.Eatspmin(foodspmin))
+                {
+                    foodspmin = foodCreatorspmin.CreateFood();
+                    speed = speed - 25;
+                    foodspmin.Draw();
+                }
+                if (snake.Eatspmax(foodspmax))
+                {
+                    foodspmax = foodCreatorspmax.CreateFood();
+                    speed = speed + 25;
+                    foodspmax.Draw();
+                }
+                //if (snake.Eatrandom(foodrandom)==10)
+                //{
+                //    foodrandom = foodCreatorrandom.CreateFood();
+                //    foodspmax = foodCreatorspmax.CreateFood();
+                //    foodrandom.Draw();
+                //}
                 else
                 {
                     snake.Move();
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(speed);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
@@ -67,13 +93,11 @@ namespace UssMang
             }
             Gameover.WriteGameOver();
 
-
             //Sound mäng = new Sound();
             //ConsoleKeyInfo nupp= new ConsoleKeyInfo();
             //_= mäng.Heli("../../../.mp3")
             //
 
         }
-        
     }
 }

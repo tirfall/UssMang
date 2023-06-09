@@ -11,16 +11,28 @@ namespace UssMang
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             switch (Menu())
             {
                 case 1:
                     break; 
                 case 2:
+                    switch (pezim.Reziim())
+                    {
+                        case 1:
+                            Kiirendatud.kiirem();
+                            break;
+                        case 2:
+                            Classic.classic();
+                            break;
+                        case 3:
+                            Laiendatud.laiend();
+                            break;
+                    }
                     break; 
                 case 3:
-                    Classic.classic();
+                    
 
                     break;
                 default: break;
@@ -31,7 +43,7 @@ namespace UssMang
 
        public static int Menu() {
             Console.SetWindowSize(30, 30);
-            Console.WriteLine("Menu\n1. Registreeri\n2. Mängu režiimid\n3. Alustada mäng\n4. Sätted\n5. Vaatada rekordid \n6. Mine välja");
+            Console.WriteLine("Menu\n1. Registreeri\n2. Alustada mäng\n3. Sätted\n4. Vaatada rekordid \n5. Mine välja");
             int ans = Int32.Parse(Console.ReadLine());
             return ans;
         }

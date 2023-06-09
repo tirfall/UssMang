@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace UssMang
 {
-    public class Classic
+    public class Kiirendatud
     {
-        public static void classic() {
+        public static void kiirem()
+        {
+            int speed = 25;
             Console.Clear();
             Console.SetWindowSize(120, 30);
             //рамка
             Console.ForegroundColor = ConsoleColor.Cyan;
             Walls walls = new Walls(119, 30);
             walls.Draw();
-
-            //Очки
-
 
             //Змейка
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -58,7 +57,7 @@ namespace UssMang
                     snake.Move();
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(speed);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
@@ -67,13 +66,11 @@ namespace UssMang
             }
             Gameover.WriteGameOver();
 
-
             //Sound mäng = new Sound();
             //ConsoleKeyInfo nupp= new ConsoleKeyInfo();
             //_= mäng.Heli("../../../.mp3")
             //
 
         }
-        
     }
 }

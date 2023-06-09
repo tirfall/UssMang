@@ -9,7 +9,6 @@ namespace UssMang
 {
     public class Scores
     {
-        int score,speed = 0;
         public Scores()
         {
             
@@ -23,27 +22,6 @@ namespace UssMang
             point1.Draw();
             
         }
-        public int Score
-        {
-            get
-            {
-                return Score;
-            }
-            set
-            {
-                score = value;
-            }
-        }
-        public int Speed
-        {
-            get
-            {
-                return Speed;
-            }
-            set
-            {
-                speed = value;
-            }
-        }
+        
     }
 }
